@@ -18,7 +18,7 @@ export default function HomePage() {
   const [currentWord, setCurrentWord] = useState('');
   const [bubbles, setBubbles] = useState<MovingBubble[]>([]);
 const [poppedLetters, setPoppedLetters] = useState<string[]>([]);
-  const animationFrameRef = useRef<number>();
+  const animationFrameRef = useRef<number | null>(null);
 
   const popSound = useRef<HTMLAudioElement | null>(null);
   const wrongSound = useRef<HTMLAudioElement | null>(null);
