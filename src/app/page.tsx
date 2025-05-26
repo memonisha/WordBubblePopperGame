@@ -17,7 +17,7 @@ export default function HomePage() {
   const [gameState, setGameState] = useState<GameState>('intro');
   const [currentWord, setCurrentWord] = useState('');
   const [bubbles, setBubbles] = useState<MovingBubble[]>([]);
-  const [poppedLetters, setPoppedLetters] = useState<string[]>([]);
+const [poppedLetters, setPoppedLetters] = useState<string[]>([]);
   const animationFrameRef = useRef<number>();
 
   const popSound = useRef<HTMLAudioElement | null>(null);
@@ -189,12 +189,14 @@ export default function HomePage() {
       {gameState === 'intro' && (
        <div className="flex flex-col items-center justify-center h-screen text-center px-4">
     {/* Your GIF */}
+   
     <img
       src="animated-bubbles.gif"
       alt="Bubbles Animation"
       className="w-80 h-50 mb-6 animate-bounce"
       style={{ animationTimingFunction: 'ease-in-out' }}
     />
+ 
 
     <h1 className="text-5xl font-extrabold text-pink-600 mb-6 animate-pulse float-up-down"  style={{ fontFamily: '"Comic Sans MS", cursive, sans-serif', textAlign: 'center', marginTop:-50}}>
       Word Bubble Popper 🎈
